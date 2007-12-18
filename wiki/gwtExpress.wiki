@@ -1,0 +1,90 @@
+#summary gwtExpress (A framework idea to enable express development of database oriented GWT Applications with very less coding)
+
+= Introduction =
+
+This project is aimed to develope a framework to enable express development of GWT Database oriented Application with very less coding
+
+= Simple things first... =
+
+Let's say we need to build a small application for the maintenance of the below table
+{{{
+CREATE TABLE `ex_lookup_values` (
+  `ROWID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `LOOKUP_TYPE` varchar(30) NOT NULL,
+  `LOOKUP_VALUE` varchar(80) NOT NULL,
+  `LOOKUP_MEANING` varchar(250) NOT NULL,
+  `START_DATE` datetime NOT NULL,
+  `END_DATE` datetime DEFAULT NULL,
+  PRIMARY KEY  (`ROWID`)
+) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=latin1;
+}}}
+
+How much do we have to code to get the following features...
+
+  * A search screen with results shown in a nice sortable grid
+http://appslogix.com/faq/demo_images/gwtExpress-0001.jpg
+  * An input form for creating a new lookup value
+http://appslogix.com/faq/demo_images/gwtExpress-0002.jpg
+  * An edit form for editing the above searched results
+http://appslogix.com/faq/demo_images/gwtExpress-0004.jpg
+  * Basic client side data validation such as mandatory fields, dates, numbers etc
+http://appslogix.com/faq/demo_images/gwtExpress-0003.jpg
+
+*Option 1*
+{{{
+    public String getTableName() {
+        return "gwtexpress.ex_lookup_values";
+    }
+
+    public String[] getColumnNames() {
+        return new String[] { "LOOKUP_TYPE", "LOOKUP_VALUE", "LOOKUP_MEANING", 
+                              "ROWID", "START_DATE", "END_DATE" };
+    }
+
+    public String[] getColumnTitles() {
+        return new String[] { "Lookup Type", "Lookup Value", "Lookup Meaning", 
+                              "Rowid", "Start Date", "End Date" };
+    }
+
+    public boolean[] getEditable() {
+        return new boolean[] { true, true, true, false, true, true };
+    }
+
+    public boolean[] getVisible() {
+        return new boolean[] { true, true, true, false, true, true };
+    }
+
+    public boolean[] getQueryable() {
+        return new boolean[] { true, true, true, false, true, true };
+    }
+
+    public int[] getPkColumnIndexs() {
+        return new int[] { 3 };
+    }
+
+    public int[] getColumnWidth() {
+        return new int[] { 30, 80, 250, 20, 11, 20 };
+    }
+
+    public String getServiceName() {
+        return "Lookups";
+    }
+
+    public int getRowIdIndex() {
+        return 3;
+    }
+
+    public boolean[] getRequired() {
+        return new boolean[] { true, true, false, true, true, false };
+    }
+
+    public char[] getColumnTypes() {
+        return new char[] { 'V', 'V', 'V', 'N', 'D', 'T' };
+    }
+}}}
+
+*Option 2*
+An XML file representing the above information...
+
+*Option 3*
+Metadata of the above information stored in a database table...
