@@ -1,4 +1,5 @@
 #summary gwtExpress (A framework idea to enable express development of database oriented GWT Applications with very less coding)
+#labels Featured,Phase-Requirements
 
 = Introduction =
 
