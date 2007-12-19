@@ -31,6 +31,7 @@ http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0004.jpg
   * Basic client side data validation such as mandatory fields, dates, numbers etc
 http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0003.jpg
 
+= Coding options =
 *Option 1*
 {{{
     public String getTableName() {
