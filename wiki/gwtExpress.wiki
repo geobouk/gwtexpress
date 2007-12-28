@@ -33,6 +33,8 @@ http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0004.jpg
   * Basic client side data validation such as mandatory fields, dates, numbers etc
 http://gwtexpress.googlepages.com/gwtExpress-0006.jpg
 
+Check out the [http://www.gwtexpress.com Demo] to see how it works...
+
 = Coding options =
 *Option 1*
 {{{
