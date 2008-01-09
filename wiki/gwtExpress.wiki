@@ -28,6 +28,8 @@ http://gwtexpress.googlepages.com/gwtExpress-0005.jpg
 http://gwtexpress.googlepages.com/gwtExpress-0007.jpg
   * An input form for creating a new lookup value
 http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0002.jpg
+  * An input form with complex layout (nested forms with title)
+http://gwtexpress.googlepages.com/complex_layout.jpg
   * An edit form for editing the above searched results
 http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0004.jpg
   * Basic client side data validation such as mandatory fields, dates, numbers etc
