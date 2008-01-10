@@ -107,32 +107,32 @@ An XML file representing the above information...
 <?xml version="1.0" encoding="UTF-8"?>
 <model>
  <tableList>
-  <table tableName="customers" title="">
+  <table tableName="customers" title="Customers">
    <columnList>
     <column columnName="customerNumber" dataType="N"
-     label="Customernumber" required="true" width="20"/>
-    <column columnName="customerName" label="Customername"
+     label="Customer Number" required="true" width="20"/>
+    <column columnName="customerName" label="Customer Name"
      required="true" width="50"/>
-    <column columnName="contactLastName" label="Contactlastname" width="50"/>
-    <column columnName="contactFirstName" label="Contactfirstname" width="50"/>
+    <column columnName="contactLastName" label="Contact Last Name" width="50"/>
+    <column columnName="contactFirstName" label="Contact First Name" width="50"/>
     <column columnName="phone" label="Phone" width="50"/>
-    <column columnName="b_addressLine1" label="B Addressline1"
+    <column columnName="b_addressLine1" label="Street"
      required="true" width="50"/>
-    <column columnName="b_addressLine2" label="B Addressline2" width="50"/>
-    <column columnName="b_city" label="B City" required="true" width="50"/>
-    <column columnName="b_state" label="B State" required="true" width="50"/>
-    <column columnName="b_postalCode" label="B Postalcode"
+    <column columnName="b_addressLine2" label="Apt#" width="50"/>
+    <column columnName="b_city" label="City" required="true" width="50"/>
+    <column columnName="b_state" label="State" required="true" width="50"/>
+    <column columnName="b_postalCode" label="Zip"
      required="true" width="15"/>
-    <column columnName="b_country" label="B Country" required="true" width="50"/>
-    <column columnName="s_addressLine1" label="S Addressline1" width="50"/>
-    <column columnName="s_addressLine2" label="S Addressline2" width="50"/>
-    <column columnName="s_city" label="S City" width="50"/>
-    <column columnName="s_state" label="S State" width="50"/>
-    <column columnName="s_postalCode" label="S Postalcode" width="15"/>
-    <column columnName="s_country" label="S Country" width="50"/>
+    <column columnName="b_country" label="Country" required="true" width="50"/>
+    <column columnName="s_addressLine1" label="Street" width="50"/>
+    <column columnName="s_addressLine2" label="Apt#" width="50"/>
+    <column columnName="s_city" label="City" width="50"/>
+    <column columnName="s_state" label="State" width="50"/>
+    <column columnName="s_postalCode" label="Zip" width="15"/>
+    <column columnName="s_country" label="Country" width="50"/>
     <column columnName="salesRepEmployeeNumber"
-     label="Salesrepemployeenumber" width="11"/>
-    <column columnName="creditLimit" dataType="N" label="Creditlimit" width="22"/>
+     label="Salesrep Employee Number" width="11"/>
+    <column columnName="creditLimit" dataType="N" label="Credit Limit" width="22"/>
     <column columnName="start_date" dataType="T" label="Start Date"
      required="true" width="19"/>
     <column columnName="end_date" dataType="D" label="End Date" width="10"/>
