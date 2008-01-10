@@ -39,60 +39,106 @@ Check out the [http://www.gwtexpress.com Demo] to see how it works...
 
 = Coding options =
 *Option 1*
+A set of column objects
 {{{
-    public String getTableName() {
-        return "gwtexpress.ex_lookup_values";
-    }
+public interface Column {
 
-    public String[] getColumnNames() {
-        return new String[] { "LOOKUP_TYPE", "LOOKUP_VALUE", "LOOKUP_MEANING", 
-                              "ROWID", "START_DATE", "END_DATE" };
-    }
+    public void setColumnName(String columnName);
 
-    public String[] getColumnTitles() {
-        return new String[] { "Lookup Type", "Lookup Value", "Lookup Meaning", 
-                              "Rowid", "Start Date", "End Date" };
-    }
+    public String getColumnName();
 
-    public boolean[] getEditable() {
-        return new boolean[] { true, true, true, false, true, true };
-    }
+    public void setLabel(String label);
 
-    public boolean[] getVisible() {
-        return new boolean[] { true, true, true, false, true, true };
-    }
+    public String getLabel();
 
-    public boolean[] getQueryable() {
-        return new boolean[] { true, true, true, false, true, true };
-    }
+    public void setUpdateAllowed(boolean updateAllowed);
 
-    public int[] getPkColumnIndexs() {
-        return new int[] { 3 };
-    }
+    public boolean isUpdateAllowed();
 
-    public int[] getColumnWidth() {
-        return new int[] { 30, 80, 250, 20, 11, 20 };
-    }
+    public void setUpdateOnlyIfNew(boolean updateOnlyIfNew);
 
-    public String getServiceName() {
-        return "Lookups";
-    }
+    public boolean isUpdateOnlyIfNew();
 
-    public int getRowIdIndex() {
-        return 3;
-    }
+    public void setVisible(boolean visible);
 
-    public boolean[] getRequired() {
-        return new boolean[] { true, true, false, true, true, false };
-    }
+    public boolean isVisible();
 
-    public char[] getColumnTypes() {
-        return new char[] { 'V', 'V', 'V', 'N', 'D', 'T' };
-    }
+    public void setRequired(boolean required);
+
+    public boolean isRequired();
+
+    public void setQueryAllowed(boolean queryAllowed);
+
+    public boolean isQueryAllowed();
+
+    public void setPrimaryKey(boolean primaryKey);
+
+    public boolean isPrimaryKey();
+
+    public void setRowId(boolean rowId);
+
+    public boolean isRowId();
+
+    public void setDataType(char dataType);
+
+    public char getDataType();
+
+    public void setWidth(int width);
+
+    public int getWidth();
+
+    void setLookupType(String lookupType);
+
+    String getLookupType();
+
+    void setLookupName(String lookupName);
+
+    String getLookupName();
+
+    void setReadOnly(boolean readOnly);
+
+    boolean isReadOnly();
+}
 }}}
 
 *Option 2*
 An XML file representing the above information...
-
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<model>
+ <tableList>
+  <table tableName="customers" title="">
+   <columnList>
+    <column columnName="customerNumber" dataType="N"
+     label="Customernumber" required="true" width="20"/>
+    <column columnName="customerName" label="Customername"
+     required="true" width="50"/>
+    <column columnName="contactLastName" label="Contactlastname" width="50"/>
+    <column columnName="contactFirstName" label="Contactfirstname" width="50"/>
+    <column columnName="phone" label="Phone" width="50"/>
+    <column columnName="b_addressLine1" label="B Addressline1"
+     required="true" width="50"/>
+    <column columnName="b_addressLine2" label="B Addressline2" width="50"/>
+    <column columnName="b_city" label="B City" required="true" width="50"/>
+    <column columnName="b_state" label="B State" required="true" width="50"/>
+    <column columnName="b_postalCode" label="B Postalcode"
+     required="true" width="15"/>
+    <column columnName="b_country" label="B Country" required="true" width="50"/>
+    <column columnName="s_addressLine1" label="S Addressline1" width="50"/>
+    <column columnName="s_addressLine2" label="S Addressline2" width="50"/>
+    <column columnName="s_city" label="S City" width="50"/>
+    <column columnName="s_state" label="S State" width="50"/>
+    <column columnName="s_postalCode" label="S Postalcode" width="15"/>
+    <column columnName="s_country" label="S Country" width="50"/>
+    <column columnName="salesRepEmployeeNumber"
+     label="Salesrepemployeenumber" width="11"/>
+    <column columnName="creditLimit" dataType="N" label="Creditlimit" width="22"/>
+    <column columnName="start_date" dataType="T" label="Start Date"
+     required="true" width="19"/>
+    <column columnName="end_date" dataType="D" label="End Date" width="10"/>
+    <column columnName="email_address" label="Email Address" width="80"/>
+   </columnList>
+  </table>
+}}}
 *Option 3*
 Metadata of the above information stored in a database table...
