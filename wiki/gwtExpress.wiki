@@ -23,17 +23,17 @@ CREATE TABLE `ex_lookup_values` (
 How much do we have to code to get the following features...
 
   * A search screen with results shown in a nice sortable grid
-http://gwtexpress.googlepages.com/gwtExpress-0005.jpg
+  http://gwtexpress.googlepages.com/gwtExpress-0005.jpg
   * An advanced search screen with results shown in a nice sortable grid
-http://gwtexpress.googlepages.com/gwtExpress-0007.jpg
+  http://gwtexpress.googlepages.com/adv_search.jpg
   * An input form for creating a new lookup value
-http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0002.jpg
+  http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0002.jpg
   * An input form with complex layout (nested forms with title)
-http://gwtexpress.googlepages.com/complex_layout.jpg
+  http://gwtexpress.googlepages.com/complex_layout.jpg
   * An edit form for editing the above searched results
-http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0004.jpg
+  http://www.gwtexpress.com-a.googlepages.com/gwtExpress-0004.jpg
   * Basic client side data validation such as mandatory fields, dates, numbers etc
-http://gwtexpress.googlepages.com/gwtExpress-0006.jpg
+  http://gwtexpress.googlepages.com/gwtExpress-0006.jpg
 
 Check out the [http://www.gwtexpress.com Demo] to see how it works...
 
