@@ -1,5 +1,5 @@
 #summary A highly interactive & personalizable charts
-#labels Featured,Phase-Requirements,Phase-Design
+#labels Phase-Requirements,Phase-Design
 
 = Express Charts =
 
