@@ -6,7 +6,7 @@
 
   A simple framework to build & display charts in a highly interactive & personalizable manner similar to iGoogle. 
 
-  http://gwtexpress.googlepages.com/charts.gif
+  [http://gwtexpress.com/charts http://gwtexpress.googlepages.com/charts.gif]
 
 == Features ==
 
@@ -49,3 +49,7 @@ public interface GraphData {
                     }
                 }, ChartImage.TYPE_BAR_CHART);
 }}}
+
+Check the [http://gwtexpress.com/charts demo] to see these charts in action...
+
+*Please provide your valuable feedback*
