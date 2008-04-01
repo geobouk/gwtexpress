@@ -1,0 +1,8 @@
+com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException, true
+com.google.gwt.user.client.rpc.SerializableException, true
+java.lang.String, true
+[Ljava.lang.String;, true
+java.util.ArrayList, true
+java.util.HashMap, true
+java.util.LinkedHashMap, true
+net.mygwt.ui.client.data.DataList, true
