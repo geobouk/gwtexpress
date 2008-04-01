@@ -1,9 +1,0 @@
-<module>
- <inherits name='com.google.gwt.user.User'/>
- <inherits name='net.mygwt.ui.MyGWT'/>
- <inherits name="com.google.gwt.i18n.I18N"/>
- <extend_property name="locale" values="fr"/>
- <extend-property name="locale" values="fr_CA"/>
- <extend-property name="locale" values="en_GB"/>
-</module>
-

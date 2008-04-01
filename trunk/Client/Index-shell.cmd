@@ -1,1 +1,0 @@
-@java -cp "D:\gLogix\v2\lib\gwt-dev-windows.jar;D:\gLogix\v2\lib\gwt-user.jar;D:\gLogix\v2\lib\mygwt.jar;D:\gLogix\v2\Client\src" com.google.gwt.dev.GWTShell -out "D:\gLogix\v2\Client\www" %* com.glogix.index/index.html
