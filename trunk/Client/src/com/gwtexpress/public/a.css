@@ -1,0 +1,367 @@
+fieldset {
+    border:1px solid #C3D9FF;
+       margin:0px;
+}
+.l{;padding:0px 0px 0px 0px;margin:0px;empty-cells:show;font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;text-align:right; color: #0D4988;padding:0px 4px 0px 8px;margin:0px;font-weight:normal;vertical-align:top; border:1px solid #C3D9FF;}
+.c{padding:0px 0px 0px 0px;margin:0px;empty-cells:show;vertical-align:top;padding:0px 4px 0px 4px; color:#000000;border:0px; border-style:none;font-size:11px;font-weight:normal; margin:0px;border:1px solid #C3D9FF;}
+.h{padding:0px 0px 0px 0px;margin:0px;empty-cells:show;vertical-align:top;padding:0px 4px 0px 4px; color:#FFFFFF;background-color: #C3D9FF;border:0px; color: #0D4988; border-style:none;font-size:11px;font-weight:bold; margin:0px;border:1px solid #C3D9FF;}
+.fieldset-cont{
+    margin-top:8px;
+    margin-bottom:8px;       
+}
+.gex_hint{
+background:#FFF1A8 none repeat scroll 0%;
+color:#000000;
+font-size:80%;
+font-weight:bold;
+padding:0pt 5px;
+text-align:center;
+}
+fieldset legend {
+color: #0D4988;
+font-weight:bold;
+}
+.gwt-RadioButton{
+    font-family:Tahoma, Verdana, Helvetica, sans-serif;
+    font-size:11px;
+    color: #0D4988;
+    font-weight:normal;
+    vertical-align:top;
+}
+.a-label-cell{
+    font-family:Tahoma, Verdana, Helvetica, sans-serif;
+    font-size:11px;
+    text-align:right;
+    color: #0D4988;
+    padding:0px 4px 0px 8px;
+    margin:0px;    
+    font-weight:normal;
+    vertical-align:top;
+}
+.a-top-label-cell{
+    padding:0px 0px 0px 0px;
+    text-align:left;
+}
+.a-comp-label-cell{
+    padding:0px 0px 0px 0px;
+}
+.a-label-err{
+    color: #FF0000;
+    margin:2px;
+    font-weight:bold;
+  text-decoration: none;
+}
+.a-label-success{
+    color: #00FF00;
+    margin:2px;
+    font-weight:bold;
+  text-decoration: none;
+}
+.a-cr{
+cursor:e-resize;    
+}
+.pointer{
+cursor:pointer;    
+}
+.a-content-cell{
+    vertical-align:top;
+    padding:0px 0px 0px 0px;
+    color:#000000;
+    border:0px;
+    border-style:none;    
+    font-size:11px;
+    font-weight:normal;    
+    margin:0px;
+}
+.gwt-FileUpload {
+    border:1px solid #C3D9FF;
+    color:#000000;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    padding:0px 2px 0px 0px;
+    width:170px;
+    text-align:left;    
+    margin:0px;
+    background: #FFFFFF;
+    height: 16px;
+}
+.gwt-TextBox {
+    border:1px solid #C3D9FF;
+    color:#000000;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    padding:0px 2px 0px 0px;
+    width:170px;
+    text-align:left;    
+    margin:0px;
+    background: #FFFFFF;
+    height: 16px;
+}
+
+.gwt-CheckBox {
+    color:#000000;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    padding:0px 0px 0px 0px;
+    text-align:left;    
+    margin:0px;
+    background: #FFFFFF;
+}
+.gwt-CheckBox-disabled{
+    border:0px solid #C3D9FF;
+}
+
+.gwt-TextArea {
+    border:1px solid #C3D9FF;
+    color:#000000;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    padding:0px 2px 0px 0px;
+    text-align:left;
+    margin:0px;
+    background: #FFFFFF;
+}
+.gwt-PasswordTextBox {
+    border:1px solid #C3D9FF;
+    color:#000000;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    padding:0px 2px 0px 0px;
+    width:170px;
+    text-align:left;    
+    margin:0px;
+    background: #FFFFFF;
+  height: 16px;
+}
+.gwt-SuggestBox {
+    border:1px solid #C3D9FF;
+    color:#000000;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    padding:0px 2px 0px 0px;
+    width:170px;
+    text-align:left;    
+    margin:0px;
+    background: #FFFFFF;
+    height: 16px; 
+    z-index: 10000;   
+}
+.gwt-SuggestBoxPopup {
+  border: 2px solid #C3D9FF;
+  background-color: #FFFFFF;
+}
+
+.gwt-SuggestBoxPopup .item {
+  padding: 2px;
+}
+
+.gwt-SuggestBoxPopup .item-selected {
+  background-color: #C3D9FF;
+  padding: 2px;
+}
+.gwt-ListBox{
+    border:1px solid #C3D9FF;
+    color:#000000;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    margin:1px;
+    padding:0px 2px 0px 0px;
+    width:170px;
+    text-align:left;    
+    margin:0px;
+    background: #FFFFFF;
+  height: 16px;
+}
+.a-req-input {
+  background: #FFFFDD;
+}
+.gwt-TextBox-readonly{
+    border:0px;
+    background: #FFFFFF;
+}
+.a-err-input {
+    border:1px solid #FF0000;
+}
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+
+.icon-add {
+  background: url(images/icons/add.gif) no-repeat;
+}
+
+.icon-delete {
+  background: url(images/icons/delete.gif) no-repeat;
+}
+
+
+
+.icon-email {
+  background: url(images/icons/email.png) no-repeat;
+}
+
+.icon-email-add {
+  background: url(images/icons/email-add.png) no-repeat;
+}
+
+.icon-date-add {
+  background: url(images/icons/date-add.png) no-repeat;
+}
+
+.icon-contact {
+  background: url(images/icons/vcard.png) no-repeat;
+}
+
+.icon-contact-add {
+  background: url(images/icons/vcard_add.png) no-repeat;
+}
+
+.icon-shell {
+  background: url(images/icons/shell.gif) no-repeat;
+}
+
+.icon-accordian {
+  background: url(images/icons/accordian.gif) no-repeat;
+}
+
+.icon-add {
+  background: url(images/icons/add.gif) no-repeat;
+}
+
+.icon-page {
+  background: url(images/icons/document.gif) no-repeat;
+}
+
+.icon-text {
+  background: url(images/icons/text.gif) no-repeat;
+}
+
+.icon-add-disabled {
+  background: url(images/icons/add.gif) no-repeat -16px 0px;
+}
+
+.text {
+  line-height: 135%;
+}
+
+.text,.text p {
+  margin: 4 0px;
+}
+
+.icon-chart {
+  background-image: url(images/icons/chart.png);
+}
+
+.icon-list {
+  background: url(images/icons/list.gif) no-repeat 50% 50%;
+}
+
+.icon-feed {
+  background-image: url(images/icons/feed.gif);
+}
+
+.icon-info {
+  background-image: url(images/icons/information.png);
+}
+
+.icon-info-white {
+  background-image: url(images/icons/information-white.gif);
+}
+.icon-error {
+  background-image: url(images/icons/error.png);
+}
+.icon-music {
+  background-image: url(images/icons/music.png);
+}
+
+.icon-printer {
+  background: url(images/icons/printer.png) no-repeat 50% 50%;
+}
+
+.icon-page-code {
+  background: url(images/icons/icons.png) no-repeat 0px -16px;
+}
+
+.icon-widget {
+  background-image: url(images/icons/icons.png);
+}
+
+.icon-widget-disabled {
+  background: url(images/icons/icons.png) no-repeat -16px 0px;
+}
+
+.icon-tabs {
+  background-image: url(images/icons/tabs.gif);
+}
+
+.headerLine{
+    border-top: thin solid #C3D9FF; border-bottom: thin none #000000; height: 10px; font-weight: 700;
+}
+.tm_pageTop
+{
+    background-color:#1F4F8F;
+    z-index:0;    
+}
+.tm_pageTop .title{
+    color:#FFFFFF;
+    font-size:18px;
+    font-weight:bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;    
+}
+.tm_pageTopHyperlink
+{
+    color:#FFFFFF;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    text-decoration:none;
+    white-space:nowrap;
+}
+.tm_pageTopHyperlink a
+{
+    color:#FFFFFF;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    text-decoration:none;
+    white-space:nowrap;
+}
+.tm_copyrights {
+color:#FFFFFF;
+font-family:Verdana,Arial,Helvetica,sans-serif;
+font-size:9px;
+font-weight:normal;
+}
+.tm_pageTopLabel
+{
+    color:#FFFFFF;
+    font-family:Tahoma,Verdana,Helvetica,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    text-decoration:none;
+    white-space:nowrap;
+}
+.tm_sepr
+{
+    color:#FFFFFF;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.current_field {
+    border:1px solid #1F4F8F;
+}
