@@ -16,6 +16,8 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
+import com.gwtexpress.client.util.QueryParameter;
+
 import net.mygwt.ui.client.Events;
 import net.mygwt.ui.client.Style;
 import net.mygwt.ui.client.event.BaseEvent;
@@ -42,6 +44,7 @@ public abstract class ExpressPage extends Page {
     String searchTabText = null;
     String createTabText = null;
     boolean createOrCancelMode = true;
+    private InputFormLayout searchForm;
 
     boolean showSearchFirst = true;
 
@@ -51,6 +54,13 @@ public abstract class ExpressPage extends Page {
 
     public void onShow() {
         Window.setTitle(getPageTitle());
+        QueryParameter qp = new QueryParameter();
+        String action = qp.getValue("a");
+        if ("as".equals(action)) {
+            searchForm.showAdvancedSearchForm();
+        } else if ("c".equals(action)) {
+            tabFolder.setSelection(sourceItem);
+        }
     }
 
     public abstract GLogixMetaData getMetaData();
@@ -66,7 +76,8 @@ public abstract class ExpressPage extends Page {
         }
         InputFormLayout form = 
             new InputFormLayout(new String[metaData.getColumnCount()], 
-                                metaData, totalCols, InputFormLayout.SEARCH_FORM, false);
+                                metaData, totalCols, 
+                                InputFormLayout.SEARCH_FORM, false);
         return form;
     }
 
@@ -80,7 +91,8 @@ public abstract class ExpressPage extends Page {
         }
         if (row == null) {
             form = 
-new InputFormLayout(metaData.createRow(), metaData, totalCols,FormLayout.CREATE_FORM, false, visible, getPageTitle());
+new InputFormLayout(metaData.createRow(), metaData, totalCols, 
+                    FormLayout.CREATE_FORM, false, visible, getPageTitle());
         } else {
             form = 
 new InputFormLayout(row, metaData, totalCols, FormLayout.EDIT_FORM, false, 
@@ -100,18 +112,17 @@ new InputFormLayout(row, metaData, totalCols, FormLayout.EDIT_FORM, false,
             table = GLogixUIBuilder.createTable(metaData);
         if (searchAllowed && queryFieldCount > 0) {
             int topHeight = (queryFieldCount * 20) + 60;
-            final InputFormLayout form = getSearchFormLayout(metaData);
-            form.setResultTable(table);
-            form.init();
+            searchForm = getSearchFormLayout(metaData);
+            searchForm.setResultTable(table);
+            searchForm.init();
 
-            ContentPanel searchRegion = 
-                new ContentPanel(Style.HEADER);
+            ContentPanel searchRegion = new ContentPanel(Style.HEADER);
             searchRegion.setFrame(true);
             searchRegion.setAnimateCollapse(false);
             searchRegion.setText("Search");
             searchRegion.setLayout(new FillLayout());
             searchRegion.setScrollEnabled(true);
-            searchRegion.add(form);
+            searchRegion.add(searchForm);
             searchRegion.setHeight(topHeight);
             c.add(searchRegion, new RowData(RowData.FILL_HORIZONTAL));
         }
@@ -144,7 +155,8 @@ new InputFormLayout(row, metaData, totalCols, FormLayout.EDIT_FORM, false,
                                                         for (int i = 0; 
                                                              i < idxs.length; 
                                                              i++) {
-                                                            currentUpdatRow.setValue(i, GLogixUIBuilder.decodeData(metaData.getColumnTypes()[idxs[i]], 
+                                                            currentUpdatRow.setValue(i, 
+                                                                                     GLogixUIBuilder.decodeData(metaData.getColumnTypes()[idxs[i]], 
                                                                                                                 data[idxs[i]]));
                                                         }
                                                     }
