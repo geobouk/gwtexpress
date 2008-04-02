@@ -77,25 +77,12 @@ public class AdvancedSearchForm extends AbstractFormLayout {
     }
 
     public void renderForm() {
-        FocusWidget ui = null;
-        Label label = null;
-        int j = 0;
-        int maxColumns = 1;
         int[] qColIdxs;
         qColIdxs = metaData.getQueryableColumnIndexes();
         paramList = new ArrayList<String[]>(qColIdxs.length);
-
         columnWidth = metaData.getColumnWidth();
-        ArrayList<String[]> suggestFields = metaData.getSuggestFields();
-        int row = 0;
-
-
-        for (row = 0; row < (qColIdxs.length / maxColumns) + 1; row++) {
-            for (int c = 0; c < (maxColumns * 4) && j < qColIdxs.length; 
-                 c += 4) {
-                addCriteria(true, qColIdxs[j], row);
-                j++;
-            }
+        for (int i = 0; i < qColIdxs.length; i++) {
+                addCriteria(true, qColIdxs[i], i);
         }
         HorizontalPanel buttonBar = getButtonBar();
         andRB = new RadioButton("ao", AND);
@@ -112,10 +99,10 @@ public class AdvancedSearchForm extends AbstractFormLayout {
         if (simpleSearch == null)
             simpleSearchBtn.setVisible(false);
         add(flexTable);
-        flexTable.setWidget(row + 1, 0, buttonBar);
-        flexTable.getFlexCellFormatter().setHorizontalAlignment(row + 1, 0, 
+        flexTable.setWidget(qColIdxs.length + 1, 0, buttonBar);
+        flexTable.getFlexCellFormatter().setHorizontalAlignment(qColIdxs.length + 1, 0, 
                                                                 HasHorizontalAlignment.ALIGN_RIGHT);
-        flexTable.getFlexCellFormatter().setColSpan(row + 1, 0, 
+        flexTable.getFlexCellFormatter().setColSpan(qColIdxs.length + 1, 0, 
                                                     flexTable.getCellCount(1));
     }
 
@@ -237,36 +224,8 @@ public class AdvancedSearchForm extends AbstractFormLayout {
         if (width < 5)
             width = 5;
         String[] lookups = metaData.getColumnLookupNames();
-        final Widget ui = createField(colIdx);
-//        if (lookups != null && lookups[colIdx] != null) {
-//            ListBox lb = new ListBox(atRow, colIdx);
-//            GLogixUIBuilder.populateLookup(this, lb, lookups[colIdx], null);
-//            ui = lb;
-//        } else {
-//            TextBox t;
-//            if (colTypes[colIdx] == 'D') {
-//                t = new DatePicker(atRow, colIdx);
-//                ((DatePicker)t).setDateFormatter(DateUtil.getDateFormat());
-//                width = 10;
-//            } else if (colTypes[colIdx] == 'T') {
-//                t = new DatePicker(atRow, colIdx);
-//                width = 15;
-//            } else {
-//                //                if (suggestFields != null && suggestFields[qColIdxs[j]])
-//                //                    t = new TextBox();
-//                //                }else{
-//                t = new TextBox(atRow, colIdx);
-//                //                }
-//            }
-//            ui = t;
-//            t.setWidth((width * 8) + "px");
-//            t.setMaxLength(columnWidth[colIdx]);
-//            t.setName(metaData.getServiceName() + ":" + colIdx);
-//        }
-        addField(columnNames[colIdx], atRow, ui);
+        final Widget ui = createField(atRow, colIdx);
         paramList.add(atRow, new String[] { colIdx + "", "=", "" });
-
-        //final FocusWidget field = ui;
         addLabel(atRow, 0 + c, columnTitles[colIdx]);
 
         char condType = colTypes[colIdx];

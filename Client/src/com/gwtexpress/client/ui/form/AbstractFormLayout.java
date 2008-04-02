@@ -184,7 +184,8 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
             String oldVal = getDataValue(t.getRowIndex(), t.getColumnIndex());
             if (oldVal == null)
                 oldVal = "";
-            String newValue = GLogixUIBuilder.encodeData(metaData.getColumnTypes()[i], 
+            String newValue = 
+                GLogixUIBuilder.encodeData(metaData.getColumnTypes()[i], 
                                            t.getText());
             if (newValue.equals(oldVal))
                 return;
@@ -232,7 +233,7 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
 
     private boolean validateFieldInternal(int i, final Widget f) {
         boolean b = true;
-        if (!editable[i])
+        if (i != -1 && !editable[i])
             return true;
 
         String errMsg = null;
@@ -349,7 +350,8 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
         }
         if (b) {
             setFieldValid(f);
-            setDataValue(getRowIndex(f), i, GLogixUIBuilder.encodeData(colTypes[i], value));
+            setDataValue(getRowIndex(f), i, 
+                         GLogixUIBuilder.encodeData(colTypes[i], value));
         } else {
             setFieldInvalid(f, errMsg);
         }
@@ -405,7 +407,8 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
     }
 
     public void onClick(Widget sender) {
-        com.gwtexpress.client.ui.Button btn = (com.gwtexpress.client.ui.Button)sender;
+        com.gwtexpress.client.ui.Button btn = 
+            (com.gwtexpress.client.ui.Button)sender;
         //System.out.println(btn.getName());
         if ("Cancel".equals(btn.getHTML())) {
             resetForm();
@@ -464,7 +467,8 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
                 ((DatePicker)w).setText(GLogixUIBuilder.decodeData(colTypes[i], 
                                                                    origValue));
             } else if (w instanceof ListBox) {
-                String value = GLogixUIBuilder.decodeData(colTypes[i], origValue);
+                String value = 
+                    GLogixUIBuilder.decodeData(colTypes[i], origValue);
                 if (value == null)
                     ((ListBox)w).setSelectedIndex(0);
                 else {
@@ -792,6 +796,8 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
     }
 
     public String getColumnData(int colIdx) {
+        if (ADVANCED_SEARCH_FORM == type)
+            return null;
         if (subForm && getParentForm() != null) {
             return getParentForm().getColumnData(colIdx);
         } else
@@ -930,7 +936,11 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
         return createField(metaData.getColumnIndex(colName));
     }
 
-    Widget createField(final int colIdx) {
+    Widget createField(int colIdx) {
+        return createField(0, colIdx);
+    }
+
+    Widget createField(int rowIdx, final int colIdx) {
         Widget ui = null;
 
         boolean readOnly = false;
@@ -970,9 +980,9 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
                     });
             suggestBox.setWidth((width * 8) + "px");
             ui = suggestBox;
-            getSuggestMap().put(suggestBox, new int[] { 0, colIdx });
+            getSuggestMap().put(suggestBox, new int[] { rowIdx, colIdx });
         } else if (lookups != null && lookups[colIdx] != null) {
-            final ListBox lb = new ListBox(0, colIdx);
+            final ListBox lb = new ListBox(rowIdx, colIdx);
             if (required[colIdx] && (type == EDIT_FORM || type == CREATE_FORM))
                 lb.setRequired(true);
             final AbstractFormLayout thisForm = this;
@@ -989,7 +999,7 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
                 lb.setEnabled(false);
             ui = lb;
         } else if (colTypes[colIdx] == 'V' && columnWidth[colIdx] == 1) {
-            CheckBox cb = new CheckBox(0, colIdx);
+            CheckBox cb = new CheckBox(rowIdx, colIdx);
             if ("Y".equals(getColumnData(colIdx))) {
                 cb.setChecked(true);
             } else {
@@ -999,7 +1009,7 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
                 cb.setEnabled(false);
             ui = cb;
         } else if (colTypes[colIdx] == 'P') {
-            PasswordTextBox ptb = new PasswordTextBox(0, colIdx);
+            PasswordTextBox ptb = new PasswordTextBox(rowIdx, colIdx);
             ptb.setWidth((width * 8) + "px");
             //t.setName(metaData.getServiceName() + ":" + colIdx);
             ptb.setText(GLogixUIBuilder.decodeData(colTypes[colIdx], 
@@ -1007,7 +1017,7 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
             ptb.setReadOnly(readOnly);
             ui = ptb;
         } else if (colTypes[colIdx] == 'D') {
-            DatePicker t = new DatePicker(0, colIdx);
+            DatePicker t = new DatePicker(rowIdx, colIdx);
             ((DatePicker)t).setDateFormatter(DateUtil.getDateFormat());
             width = 15;
             t.setMaxLength(10);
@@ -1017,7 +1027,7 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
             t.setReadOnly(readOnly);
             ui = t;
         } else if (colTypes[colIdx] == 'T') {
-            DatePicker t = new DatePicker(0, colIdx);
+            DatePicker t = new DatePicker(rowIdx, colIdx);
             ((DatePicker)t).setDateFormatter(DateUtil.getDateTimeFormat());
             width = 20;
             t.setMaxLength(16);
@@ -1029,10 +1039,10 @@ public abstract class AbstractFormLayout extends SimplePanel implements FormLayo
         } else {
             TextBox t;
             if (colTypes[colIdx] == 'N') {
-                t = new TextBoxNumber(0, colIdx);
+                t = new TextBoxNumber(rowIdx, colIdx);
                 t.setMaxLength(columnWidth[colIdx]);
             } else {
-                t = new TextBox(0, colIdx);
+                t = new TextBox(rowIdx, colIdx);
                 t.setMaxLength(columnWidth[colIdx]);
             }
             t.setWidth((width * 8) + "px");
