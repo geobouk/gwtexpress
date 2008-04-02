@@ -229,4 +229,4 @@ public class Customers extends ExpressPage {
 }}}
 *End Result* http://gwtexpress.com/#Customers
 
-Login details for the above demo: gwtexpress@gmail.com/demo
+Login details for the above demo: demo/demo
