@@ -1,4 +1,5 @@
 #summary Express Page in 3 steps
+#labels Featured,Phase-Implementation
 
 == Step 1 ==
 Create a table
@@ -226,6 +227,6 @@ public class Customers extends ExpressPage {
     }
 }
 }}}
-[http://gwtexpress.com/#Customers End Result]
+*End Result* http://gwtexpress.com/#Customers
 
 Login details for the above demo: gwtexpress@gmail.com/demo
