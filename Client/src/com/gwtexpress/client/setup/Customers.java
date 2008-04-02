@@ -6,57 +6,62 @@ import com.gwtexpress.client.ui.ex.ExpressPage;
 import com.gwtexpress.client.ui.form.FormLayout;
 import com.gwtexpress.client.ui.form.InputFormLayout;
 
-public class Customers extends ExpressPage{
 
-   private GLogixMetaData metaData = new CustomersMetaData();
-   private String title = "Customers";
+public class Customers extends ExpressPage {
 
-   public String getPageTitle(){
-      return title;
-   }
+    private GLogixMetaData metaData = new CustomersMetaData();
+    private String title = "Customers";
 
-   public GLogixMetaData getMetaData(){
-      return metaData;
-   }
+    public String getPageTitle() {
+        return title;
+    }
 
-   public InputFormLayout getInputFormLayout(GLogixMetaData metaData, String[] row){
-      int type;
-      if (row == null){
-         row = metaData.createRow();
-         type = FormLayout.CREATE_FORM;
-      } else {
-         type = FormLayout.EDIT_FORM;
-      }
-      String[] labels = metaData.getColumnTitles();
-      final InputFormLayout form = new InputFormLayout(row, metaData, 2, type, false, 
-                                                       new int[]{ 0, 1, 3, 2, 4, 21, 17, 18 }, "Customer Details");
-      InputFormLayout aDates = new InputFormLayout(row, metaData, 2, type, true, new int[]{ 19, 20 }, "Active Dates");
-      labels[19] = "";
-      labels[20] = "-";
-      aDates.setColumnTitles(labels);
-      aDates.setCompact(true);
-      form.addSubForm(5, 0, 1, 4, aDates);
-      InputFormLayout billToAddr = new InputFormLayout(row, metaData, 1, type, true, new int[]{ 5, 6, 7, 8, 9, 10 }, 
-                                                       "Bill To Address");
-      labels[5] = "Street";
-      labels[6] = "Apt#";
-      labels[7] = "City";
-      labels[8] = "State";
-      labels[9] = "Zip";
-      labels[10] = "Country";
-      billToAddr.setColumnTitles(labels);
-      form.addSubForm(6, 0, billToAddr);
-      InputFormLayout shipToAddr = new InputFormLayout(row, metaData, 1, type, true, 
-                                                       new int[]{ 11, 12, 13, 14, 15, 16 }, "Ship To Address");
-      labels[11] = "Street";
-      labels[12] = "Apt#";
-      labels[13] = "City";
-      labels[14] = "State";
-      labels[15] = "Zip";
-      labels[16] = "Country";
-      shipToAddr.setColumnTitles(labels);
-      form.addSubForm(6, 1, shipToAddr);
-      return form;
-   }
+    public GLogixMetaData getMetaData() {
+        return metaData;
+    }
 
+    public InputFormLayout getInputFormLayout(GLogixMetaData metaData, 
+                                              String[] row) {
+        int type;
+        if (row == null) {
+            row = metaData.createRow();
+            type = FormLayout.CREATE_FORM;
+        } else {
+            type = FormLayout.EDIT_FORM;
+        }
+        final InputFormLayout mainForm = 
+            new InputFormLayout(row, metaData, 2, type, false, 
+                                new String[] { "customerNumber", 
+                                               "customerName", 
+                                               "contactLastName", 
+                                               "contactFirstName", "phone", 
+                                               "salesRepEmployeeNumber", 
+                                               "creditLimit", 
+                                               "email_address" }, 
+                                "Customer Details");
+        InputFormLayout activeDatesForm = 
+            new InputFormLayout(row, metaData, 2, type, true, 
+                                new String[] { "start_date", "end_date" }, 
+                                "Active Dates");
+        activeDatesForm.setCompact(true);
+        mainForm.addSubForm(5, 0, 1, 4, activeDatesForm);
+        InputFormLayout billToAddrForm = 
+            new InputFormLayout(row, metaData, 1, type, true, 
+                                new String[] { "b_addressLine1", 
+                                               "b_addressLine2", "b_city", 
+                                               "b_state", "b_postalCode", 
+                                               "b_country" }, 
+                                "Bill To Address");
+
+        mainForm.addSubForm(6, 0, billToAddrForm);
+        InputFormLayout shipToAddrForm = 
+            new InputFormLayout(row, metaData, 1, type, true, 
+                                new String[] { "s_addressLine1", 
+                                               "s_addressLine2", "s_city", 
+                                               "s_state", "s_postalCode", 
+                                               "s_country" }, 
+                                "Ship To Address");
+        mainForm.addSubForm(6, 1, shipToAddrForm);
+        return mainForm;
+    }
 }
