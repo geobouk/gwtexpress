@@ -479,15 +479,19 @@ public class InputFormLayout extends AbstractFormLayout {
         return data;
     }
 
+    public void showAdvancedSearchForm(){
+        advancedSearchForm.init();
+        flexTable.setVisible(false);
+        advancedSearchForm.setVisible(true);
+    }
+
     public void onClick(Widget sender) {
         super.onClick(sender);
         Button btn = (Button)sender;
         if ("FIND".equals(btn.getId())) {
             GLogixUIBuilder.fetchData(resultTable, metaData, data);
         } else if ("ADV_SEARCH".equals(btn.getId())) {
-            advancedSearchForm.init();
-            flexTable.setVisible(false);
-            advancedSearchForm.setVisible(true);
+            showAdvancedSearchForm();
         } else if ("SAVE".equals(btn.getId())) {
             if (isDirty()) {
                 postData();
