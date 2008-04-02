@@ -156,7 +156,7 @@ The below mentioned "CITIES" & "STATES" are the lookup types that are keyed into
     { null, null, null, null, null, null, null, null, null, null, null, null, 
       null, "CITIES", "STATES", null, null, null, null, null, null, null };
 }}}
-The above codeline is all you need to add SuggestBox & Dropdown ListBox to your express page. See the above metadata in action on the [http://gwtexpress.com/#Customers Customer Page]
+The above codeline is all you need to add Suggest Box & Dropdown List Box to your express page. See the above metadata in action on the [http://gwtexpress.com/#Customers?a=c Customer Creation Page]
 
 *Worker.java*
 {{{
