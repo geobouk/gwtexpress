@@ -1,2 +1,8 @@
 #labels Featured
-=TBD=
+# What is GWT Express?
+  GWT Express is a simple framework that can be used to build database oriented application with very little UI coding
+# What persistence technologies are used on the server side?
+  Simple JDBC
+# What tool-kits are used on the client side?
+  MyGWT - Layout, Tabs, Table etc
+  Vanilla GWT Widgets  - TextBox, Button, ListBox, SuggestBox etc.
