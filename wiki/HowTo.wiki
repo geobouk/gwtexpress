@@ -1,2 +1,13 @@
 #labels Featured
-=TBD=
+====How to create an application using GWTExpress====
+  TBD
+====How to change the Search Tab text====
+`myExpressPage.setSearchTabText(searchTabText);`
+====How to display the Create page by default instead of the Search page?====
+`myExpressPage.setShowSearchFirst(false);`
+====How to disable editing?====
+`myExpressPage.setEditAllowed(false);`
+====How to disable search?====
+`myExpressPage.setSearchAllowed(false);`
+====How to set auto query?====
+`myExpressPage.setAutoQueryParams(String[] autoQueryParams);`
