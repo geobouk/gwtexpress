@@ -1,8 +1,20 @@
 #labels Featured
-# What is GWT Express?
+====What is GWT Express?====
   GWT Express is a simple framework that can be used to build database oriented application with very little UI coding
-# What persistence technologies are used on the server side?
+====What persistence technologies are used on the server side?====
   Simple JDBC
-# What tool-kits are used on the client side?
-  MyGWT - Layout, Tabs, Table etc
-  Vanilla GWT Widgets  - TextBox, Button, ListBox, SuggestBox etc.
+====What tool-kits are used on the client side?====
+  * MyGWT - Layout, Tabs, Table etc
+  * Vanilla GWT Widgets  - TextBox, Button, ListBox, SuggestBox etc.
+====Where can I find the demo?====
+  http://GWTExpress.com
+====What is the username/password for the demo application?====
+  demo/demo
+====What database does the demo application uses?====
+  MySQL
+====What application server the demo is running on?====
+  Apache Tomcat/5.5.25
+====Can I use this framework to build my application?====
+  Yes.
+====Hey! I like this idea. Can I contribute?====
+  Yes. Please send an email to gwtexpress@gmail.com
