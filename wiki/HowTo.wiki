@@ -11,3 +11,19 @@
 `myExpressPage.setSearchAllowed(false);`
 ====How to set auto query?====
 `myExpressPage.setAutoQueryParams(String[] autoQueryParams);`
+====How to ensure that the user selects a valid value from the SuggestBox suggestions?====
+{{{
+        SuggestBox2 suggest = 
+            (SuggestBox2)myForm.findField("<ColumnName>");
+        FieldHandler fieldHandler = new FieldHandler() {
+                public String isValid(Widget field) {
+                    SuggestBox2 suggest = ((SuggestBox2)field);
+                    if (suggest.getSuggestOracle().isValid(suggest.getText())) {
+                        return null;
+                    } else {
+                        return "Invalid value. Please select a value from the suggested list.";
+                    }
+                }
+            };
+        myForm.addFieldHandler(suggest, fieldHandler);
+}}}
