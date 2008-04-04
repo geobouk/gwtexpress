@@ -15,11 +15,17 @@
 ====What application server the demo is running on?====
   Apache Tomcat/5.5.25
 ====What are the benefits of using GWTExpress framework instead of GWT?====
-  Well, GWTExpress is built using GWT. So most of the code you would write for developing a database oriented application is already built into the framework. Some of the major benefits are listed below
+  Well, GWTExpress is built using GWT & MyGWT (For layouts & tables). So most of the code you would write for developing a database oriented application is already built into the framework. You just add additional business validation logic on top of it. Some of the major benefits are listed below
   # No need to write JDBC code for handling Create/Update/Fetch/Delete.
   # No need to write code for handling login security
   # The framework provides built-in function based security to restrict certain operations based on roles.
   # Populating ListBox & SugguestBox are taken care by the framework based on a lookup table. For non-lookup based, we just have to write custom SQL on the server side. Refer "How to populate ListBox? or SuggestBox? from a custom table instead of lookup table?" section in HowTo.
+  # The framework provides built-in search capability in two modes "Simple" & "Advanced".
+  # Centralized code for basic validation of numbers, dates & date times are built-in.
+  # Generic code for rendering your application page. [http://code.google.com/p/gwtexpress/source/browse/trunk/Client/src/com/gwtexpress/client/ui/ex/ExpressPage.java ExpressPage.java]. Can easily add new features to this one class, and will get reflected to the entire application.
+  # Generic code for rendering Data entry Forms [http://code.google.com/p/gwtexpress/source/browse/trunk/Client/src/com/gwtexpress/client/ui/form/InputFormLayout.java InputFormLayout.java]
+  # Minimal code (small .js files)
+  # FieldHandler for custom client-side validation. Refer "How to perform custom field validation?" section in HowTo.
 ====Can I use this framework to build my application?====
   Yes.
 ====Hey! I like this idea. Can I contribute?====
