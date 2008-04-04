@@ -14,6 +14,12 @@
   MySQL
 ====What application server the demo is running on?====
   Apache Tomcat/5.5.25
+====What are the benefits of using GWTExpress framework instead of GWT?====
+  Well, GWTExpress is built using GWT. So most of the code you would write for developing a database oriented application is already built into the framework. Some of the major benefits are listed below
+  # No need to write JDBC code for handling Create/Update/Fetch/Delete.
+  # No need to write code for handling login security
+  # The framework provides built-in function based security to restrict certain operations based on roles.
+  # Populating ListBox & SugguestBox are taken care by the framework based on a lookup table. For non-lookup based, we just have to write custom SQL on the server side. Refer "How to populate ListBox? or SuggestBox? from a custom table instead of lookup table?" section in HowTo.
 ====Can I use this framework to build my application?====
   Yes.
 ====Hey! I like this idea. Can I contribute?====
