@@ -12,7 +12,7 @@
 ====How to set auto query?====
 `myExpressPage.setAutoQueryParams(String[] autoQueryParams);`
 ====How to perform custom field validation?====
-Refer [http://code.google.com/p/gwtexpress/source/browse/trunk/Client/src/com/gwtexpress/client/ui/ex/secure/MyAccount.java MyAccount.java]
+Refer [http://code.google.com/p/gwtexpress/source/browse/trunk/Client/src/com/gwtexpress/client/ui/ex/secure/MyAccount.java MyAccount.java] & [http://code.google.com/p/gwtexpress/source/browse/trunk/Client/src/com/gwtexpress/client/ui/form/FieldHandler.java FieldHandler.java]
 {{{
         FieldHandler fh = new FieldHandler() {
                 public String isValid(Widget field) {
