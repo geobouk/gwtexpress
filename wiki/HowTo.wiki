@@ -11,6 +11,30 @@
 `myExpressPage.setSearchAllowed(false);`
 ====How to set auto query?====
 `myExpressPage.setAutoQueryParams(String[] autoQueryParams);`
+====How to custom field validators?====
+[http://code.google.com/p/gwtexpress/source/browse/trunk/Client/src/com/gwtexpress/client/ui/ex/secure/MyAccount.java Refer MyAccount.java]
+{{{
+        FieldHandler fh = new FieldHandler() {
+                public String isValid(Widget field) {
+                    PasswordTextBox pw1 = 
+                        (PasswordTextBox)pwdChangeForm.getField("NEW_PASSWORD1");
+                    PasswordTextBox pw2 = 
+                        (PasswordTextBox)pwdChangeForm.getField("NEW_PASSWORD2");
+                    if (field == pw1 || field == pw2) {
+                        String p1 = pw1.getText();
+                        String p2 = pw2.getText();
+                        if (p1 != null && p2 != null && p1.length() > 0 && 
+                            p2.length() > 0 && !p1.equals(p2)) {
+                            return "New passwords doesn't match each other. Please verify.";
+                        }
+                    }
+                    return null;
+                }
+            };
+        pwdChangeForm.addFieldHandler("OLD_PASSWORD", fh);
+        pwdChangeForm.addFieldHandler("NEW_PASSWORD1", fh);
+        pwdChangeForm.addFieldHandler("NEW_PASSWORD2", fh);
+}}}
 ====How to ensure that the user selects a valid value from the SuggestBox suggestions?====
 {{{
         SuggestBox2 suggest = 
