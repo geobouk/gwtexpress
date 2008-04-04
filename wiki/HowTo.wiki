@@ -51,3 +51,20 @@ Refer [http://code.google.com/p/gwtexpress/source/browse/trunk/Client/src/com/gw
             };
         myForm.addFieldHandler(suggest, fieldHandler);
 }}}
+====How to populate ListBox or SuggestBox from a custom table instead of lookup table?====
+In you metadata definition specify the lookup name as "LOV:<CUSTOM VALUE>" and on the server write your customer query for <CUSTOM VALUE> as shown below.
+Refer [http://code.google.com/p/gwtexpress/source/browse/trunk/Model/src/com/gwtexpress/server/Worker.java Worker.java]
+{{{
+    public ArrayList<String[]> getLOVData(String lovName, 
+                                          String[] params) throws SQLException {
+        if ("USER_ID".equals(lovName)) {
+            MetaDataObject metaDataObject;
+            metaDataObject = 
+                    dbMetaDataObject.getMetaDataObject("SELECT USER_ID, USER_NAME FROM user_accounts ORDER BY 2", 
+                                                       null);
+            return metaDataObject.getData();
+        } else {
+            return null;
+        }
+    }
+}}}
